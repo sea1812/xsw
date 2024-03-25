@@ -1,2 +1,6 @@
+[server]
+address = ":9001"
+sessionIdName    = "MySessionId"
+sessionPath = "./tmp/session"
 [database]
 link = "sqlite: ./data/data.db"
