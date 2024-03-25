@@ -3,6 +3,7 @@ package app
 import (
 	"github.com/gogf/gf/frame/g"
 	"strings"
+	"time"
 )
 
 // TConfigItem 设置项目对象
@@ -81,10 +82,20 @@ func (p *TConfig) SaveToDb() {
 // LoadFromDb 从数据库中读取
 func (p *TConfig) LoadFromDb() {
 	if strings.TrimSpace(p.Table) != "" {
-		res, _ := g.DB().Model(p.Table).All()
+		//数据库设置5分钟缓存
+		res, _ := g.DB().Model(p.Table).Cache(time.Minute*5, "CONFIG_"+p.Table).All()
 		p.Clear()
 		for _, v := range res {
 			p.Add(v["key"].String(), v["value"].String(), v["comments"].String())
 		}
 	}
+}
+
+// ToMap Map 导出成Map
+func (p *TConfig) ToMap() *g.Map {
+	var mR g.Map = make(g.Map)
+	for _, v := range p.Data {
+		mR[v.Key] = v.Value
+	}
+	return &mR
 }

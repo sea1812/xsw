@@ -4,13 +4,29 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新Config">
-      <change afterPath="$PROJECT_DIR$/test/TestConfig.go" afterDir="false" />
+    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新Pages">
+      <change afterPath="$PROJECT_DIR$/static/css/test/style.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/template/test/404.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/test/TestPage.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Config.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Pages.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pages.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.min.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/css/fastbootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/fastbootstrap.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/test/fastbootstrap.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/fastbootstrap.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/test/fastbootstrap.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/fastbootstrap.min.js" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/test/fastbootstrap.min.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/js/fastbootstrap.min.js.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/js/test/fastbootstrap.min.js.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/template/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/test/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -20,8 +36,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="HTML File" />
         <option value="Go File" />
+        <option value="HTML File" />
+        <option value="CSS File" />
       </list>
     </option>
   </component>
@@ -75,6 +92,7 @@
     "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "last_opened_file_path": "/home/user",
+    "list.type.of.created.stylesheet": "CSS",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
@@ -83,6 +101,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/static/js/test" />
+      <recent name="$PROJECT_DIR$/static/css/test" />
       <recent name="$PROJECT_DIR$/static" />
     </key>
   </component>
@@ -120,7 +140,8 @@
     <MESSAGE value="更新Readme" />
     <MESSAGE value="更新main.go" />
     <MESSAGE value="更新Config" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新Config" />
+    <MESSAGE value="更新Pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新Pages" />
   </component>
   <component name="VgoProject">
     <environment>
