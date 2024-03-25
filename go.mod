@@ -1,6 +1,9 @@
 module xsw
 
-require github.com/gogf/gf v1.16.9
+require (
+	github.com/gogf/gf v1.16.9
+	github.com/mattn/go-sqlite3 v1.14.22
+)
 
 require (
 	github.com/BurntSushi/toml v0.3.1 // indirect

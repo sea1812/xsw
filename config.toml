@@ -1,0 +1,2 @@
+[database]
+link = "sqlite: ./data/data.db"
