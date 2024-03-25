@@ -3,13 +3,14 @@ package main
 import (
 	"github.com/gogf/gf/frame/g"
 	"xsw/app"
+	"xsw/test"
 )
 
 func main() {
 	s := g.Server()
 
 	//检查系统环境配置
-
+	test.TestClass()
 	//读取全局变量
 
 	//初始化路由

@@ -15,7 +15,7 @@ type TConfigItem struct {
 // TConfig 设置对象
 type TConfig struct {
 	Table string        //持久化对应的SQLite表
-	data  []TConfigItem //保存所有设置项目对
+	Data  []TConfigItem //保存所有设置项目对
 }
 
 // Add 增加设置项目，返回对象指针
@@ -25,24 +25,25 @@ func (p *TConfig) Add(AKey string, AValue string, AComment string) *TConfigItem 
 		Value:   AValue,
 		Comment: AComment,
 	}
-	p.data = append(p.data, mKey)
+	p.Data = append(p.Data, mKey)
 	return &mKey
 }
 
 // ItemByKey 根据Key名查找设置项
 func (p *TConfig) ItemByKey(AKey string) *TConfigItem {
-	for _, v := range p.data {
+	var mR *TConfigItem = nil
+	for _, v := range p.Data {
 		if v.Key == AKey {
-			return &v
-
+			mR = &v
+			break
 		}
 	}
-	return nil
+	return mR
 }
 
 // Clear 清除全部设置项目
 func (p *TConfig) Clear() {
-	p.data = nil
+	p.Data = nil
 }
 
 // 检查数据库中是否存在指定Key的记录
@@ -58,7 +59,7 @@ func (p *TConfig) ifKeyExists(AKey string) bool {
 // SaveToDb 保存到数据库
 func (p *TConfig) SaveToDb() {
 	if strings.TrimSpace(p.Table) != "" {
-		for _, v := range p.data {
+		for _, v := range p.Data {
 			if p.ifKeyExists(v.Key) == false {
 				//插入
 				_, _ = g.DB().Model(p.Table).Insert(g.Map{
@@ -83,7 +84,7 @@ func (p *TConfig) LoadFromDb() {
 		res, _ := g.DB().Model(p.Table).All()
 		p.Clear()
 		for _, v := range res {
-			p.Add(v["key"].String(), v["value"].String(), v["comment"].String())
+			p.Add(v["key"].String(), v["value"].String(), v["comments"].String())
 		}
 	}
 }

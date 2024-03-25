@@ -4,17 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新main.go">
-      <change afterPath="$PROJECT_DIR$/app/Config.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/Pages.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/bootstrap-logo.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/static/img/xsw.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/template/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新Config">
+      <change afterPath="$PROJECT_DIR$/test/TestConfig.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Pages.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pages.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.mod" beforeDir="false" afterPath="$PROJECT_DIR$/go.mod" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/go.sum" beforeDir="false" afterPath="$PROJECT_DIR$/go.sum" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -83,7 +78,7 @@
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_package_manager_path": "npm",
-    "settings.editor.selected.configurable": "go.vgo"
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default"
   }
 }]]></component>
   <component name="RecentsManager">
@@ -124,7 +119,8 @@
     <MESSAGE value="新建data.db" />
     <MESSAGE value="更新Readme" />
     <MESSAGE value="更新main.go" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新main.go" />
+    <MESSAGE value="更新Config" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新Config" />
   </component>
   <component name="VgoProject">
     <environment>
