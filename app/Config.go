@@ -99,3 +99,13 @@ func (p *TConfig) ToMap() *g.Map {
 	}
 	return &mR
 }
+
+// GetValue 获取Key的值
+func (p *TConfig) GetValue(AKey string) string {
+	mItem := p.ItemByKey(AKey)
+	if mItem != nil {
+		return mItem.Value
+	} else {
+		return ""
+	}
+}

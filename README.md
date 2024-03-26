@@ -16,3 +16,8 @@
 * 提供桌面端和手机端APP
 * 提供admin API接口
 * 提供推送通知接口（可推送到更新汇总网站或者APP的MQTT消息）
+
+随机图片
+* https://api.lyiqk.cn/scenery
+* https://source.unsplash.com/user/erondu/1600x900
+* 

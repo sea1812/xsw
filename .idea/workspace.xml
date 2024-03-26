@@ -5,17 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新Config.toml">
+      <change afterPath="$PROJECT_DIR$/test/TestRandomImg.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/config.toml" beforeDir="false" afterPath="$PROJECT_DIR$/config.toml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.db" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.min.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.css.map" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.min.css" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.min.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.min.css.map" beforeDir="false" afterPath="$PROJECT_DIR$/static/css/test/fastbootstrap.rtl.min.css.map" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/README.md" beforeDir="false" afterPath="$PROJECT_DIR$/README.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Config.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/test/index.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -26,9 +20,9 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Go File" />
         <option value="HTML File" />
         <option value="CSS File" />
+        <option value="Go File" />
       </list>
     </option>
   </component>
