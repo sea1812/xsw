@@ -20,7 +20,6 @@ type TFrontPage struct {
 	TemplateFilename string    //模板名称
 	CustomData       g.Map     //用户传入的数据
 	FromTime         time.Time //开始生成页面的时间
-
 }
 
 // Init 初始化

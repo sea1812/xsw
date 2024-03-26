@@ -20,7 +20,8 @@ func main() {
 
 	//测试页面
 	GroupTest := s.Group("/test")
-	GroupTest.ALL("/", test.TestingPage)
+	GroupTest.ALL("/page", test.TestingPage)
+	GroupTest.ALL("/categories", test.TestCategories)
 
 	//s.SetPort(9001)
 	test.GetImgUrl()

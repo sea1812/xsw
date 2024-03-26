@@ -109,3 +109,14 @@ func (p *TConfig) GetValue(AKey string) string {
 		return ""
 	}
 }
+
+// SetValue 更新Key的值
+func (p *TConfig) SetValue(AKey string, AValue string, AComment string) {
+	mItem := p.ItemByKey(AKey)
+	if mItem != nil {
+		mItem.Value = AValue
+		if strings.TrimSpace(AComment) != "" {
+			mItem.Comment = AComment
+		}
+	}
+}
