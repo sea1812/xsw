@@ -1,7 +1,6 @@
 package app
 
 import (
-	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"strings"
 	"time"
@@ -69,7 +68,6 @@ func (p *TCategories) LoadFromDB() {
 	p.Clear()
 	res, _ := g.DB().Model("categories").OrderDesc("position").Cache(time.Second*30, "categories").All()
 	for _, v := range res {
-		fmt.Println(v)
 		mItem := p.Add()
 		mItem.Url = v["url"].String()
 		mItem.Id = v["id"].Int()
@@ -80,7 +78,6 @@ func (p *TCategories) LoadFromDB() {
 		mItem.IsHidden = v["is_hidden"].Int()
 		mItem.IsSecret = v["is_secret"].Int()
 		mItem.SecretPwd = v["secret_pwd"].String()
-		fmt.Println(mItem)
 	}
 }
 
