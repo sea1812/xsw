@@ -4,6 +4,7 @@ import (
 	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"strings"
+	"time"
 )
 
 /*
@@ -66,7 +67,7 @@ func (p *TCategories) SaveToDB() {
 // LoadFromDB 从数据库加载分类目录
 func (p *TCategories) LoadFromDB() {
 	p.Clear()
-	res, _ := g.DB().Model("categories").OrderDesc("position").All()
+	res, _ := g.DB().Model("categories").OrderDesc("position").Cache(time.Second*30, "categories").All()
 	for _, v := range res {
 		fmt.Println(v)
 		mItem := p.Add()
@@ -117,4 +118,11 @@ func (p *TCategories) ItemByCaption(ACaption string) *TCategoryItem {
 		}
 	}
 	return mR
+}
+
+// Init 初始化
+func (p *TCategories) Init() {
+	if strings.TrimSpace(p.Table) != "" {
+		p.LoadFromDB()
+	}
 }

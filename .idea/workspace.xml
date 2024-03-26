@@ -4,13 +4,9 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新test">
-      <change afterPath="$PROJECT_DIR$/app/Categories.go" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/test/TestCategories.go" afterDir="false" />
+    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新Categories">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Config.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Config.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pages.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pages.go" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Categories.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Categories.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -129,7 +125,8 @@
     <MESSAGE value="更新TestingPage" />
     <MESSAGE value="更新Config.toml" />
     <MESSAGE value="更新test" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新test" />
+    <MESSAGE value="更新Categories" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新Categories" />
   </component>
   <component name="VgoProject">
     <environment>

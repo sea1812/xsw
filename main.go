@@ -24,6 +24,6 @@ func main() {
 	GroupTest.ALL("/categories", test.TestCategories)
 
 	//s.SetPort(9001)
-	test.GetImgUrl()
+	//test.GetImgUrl()
 	s.Run()
 }
