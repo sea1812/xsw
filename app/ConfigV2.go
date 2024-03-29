@@ -1,7 +1,6 @@
 package app
 
 import (
-	"fmt"
 	"github.com/gogf/gf/encoding/gjson"
 	"github.com/gogf/gf/os/gcache"
 	"github.com/gogf/gf/os/gfile"
@@ -47,8 +46,7 @@ func (p *TConfigV2) LoadFromFile(AFilename string) {
 		mJson := gjson.New(mJsonStr)
 		_ = mJson.UnmarshalValue(p)
 	} else {
-		mJson, er := gjson.Load(AFilename, true)
-		fmt.Println(mJson, er)
+		mJson, _ := gjson.Load(AFilename, true)
 		_ = mJson.UnmarshalValue(p)
 	}
 }

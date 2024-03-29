@@ -1,6 +1,7 @@
 package app
 
 import (
+	"fmt"
 	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/os/gcache"
@@ -42,7 +43,7 @@ func (p *TFrontPageV2) Init() {
 // PrepareOutdata 准备用于输出的OutData
 func (p *TFrontPageV2) PrepareOutdata() {
 	p.outData["System"] = p.Config
-	p.outData["System"] = p.Config
+	p.outData["State"] = p.State
 	p.outData["PageTitle"] = p.PageTitle
 	p.outData["ContentTpl"] = p.ContentTemplate
 	p.outData["AttachTpl"] = p.AttachTemplate
@@ -62,23 +63,27 @@ func (p *TFrontPageV2) RenderPage() string {
 // Display 显示页面
 func (p *TFrontPageV2) Display() {
 	var mPage string //页面内容
+	p.PrepareOutdata()
 	if p.CacheEnable {
 		//使用页面缓存
 		mIs, _ := gcache.Contains(p.CacheKey)
 		if mIs == true {
 			//缓存存在，从缓存中读取
-			m2, _ := gcache.GetVar(p.CacheKey)
-			mPage = m2.String()
+			m2, _ := gcache.Get(p.CacheKey)
+			mPage = fmt.Sprint(m2)
+			fmt.Println("缓存存在")
 		} else {
+			fmt.Println("缓存不存在")
+			//缓存不存在，生成页面并存入缓存
 			p.endTime = time.Now()
 			p.outData["SubTime"] = p.endTime.Sub(p.startTime)
-			//缓存不存在，生成页面并存入缓存
 			mPage = p.RenderPage()
+			_ = gcache.Set(p.CacheKey, mPage, p.CacheDuration)
 		}
 	} else {
+		//不使用页面缓存，直接生成页面
 		p.endTime = time.Now()
 		p.outData["SubTime"] = p.endTime.Sub(p.startTime)
-		//不使用页面缓存，直接生成页面
 		mPage = p.RenderPage()
 	}
 	//输出页面内容

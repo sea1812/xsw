@@ -20,7 +20,7 @@ func main() {
 
 	//测试页面
 	GroupTest := s.Group("/test")
-	GroupTest.ALL("/page", test.TestingPage)
+	GroupTest.ALL("/page", test.TestPageV2)
 	GroupTest.ALL("/categories", test.TestCategories)
 	GroupTest.ALL("/state", test.TestPageState)
 	GroupTest.ALL("/config", test.TestConfigV2)
