@@ -16,10 +16,11 @@ import (
 */
 
 type TFrontPage struct {
-	Config           TConfig   //默认设置
-	TemplateFilename string    //模板名称
-	CustomData       g.Map     //用户传入的数据
-	FromTime         time.Time //开始生成页面的时间
+	Config           TConfig    //系统设置
+	State            TPageState //页面状态
+	TemplateFilename string     //模板名称
+	CustomData       g.Map      //用户传入的数据
+	FromTime         time.Time  //开始生成页面的时间
 }
 
 // Init 初始化
@@ -28,12 +29,17 @@ func (p *TFrontPage) Init() {
 		Table: "config",
 		Data:  nil,
 	}
-	p.Config.LoadFromDb()
 	p.FromTime = time.Now()
+	p.Config.LoadFromDb()
 }
 
 // Display 显示页面，输出到浏览器
 func (p *TFrontPage) Display(r *ghttp.Request) {
+	//加载页面状态
+	p.State.PageId = "home"
+	p.State.Request = r
+	p.State.Load() //刷新页面状态
+	//组合页面模板
 	mTemplateFilename := gfile.Join(p.Config.ItemByKey("site_theme").Value, p.TemplateFilename) //组合最终的模板文件名称
 	if gfile.Exists(mTemplateFilename) != false {
 		//模板文件存在，正常输出模板
@@ -44,6 +50,7 @@ func (p *TFrontPage) Display(r *ghttp.Request) {
 			"System":  p.Config.ToMap(),
 			"Data":    p.CustomData,
 			"Subtime": mSub,
+			"State":   p.State,
 		})
 	} else {
 		//模板文件不存在，则输出404页面丢失页面
@@ -56,6 +63,7 @@ func (p *TFrontPage) Display(r *ghttp.Request) {
 		_ = r.Response.WriteTpl(m404TemplateFilename, g.Map{
 			"Config": p.Config,
 			"Data":   p.CustomData,
+			"State":  p.State,
 		})
 	}
 }
@@ -69,6 +77,7 @@ func (p *TFrontPage) RenderToFile(AFilename string) {
 		mC, _ = g.View().Parse(gctx.New(), mTemplateFilename, g.Map{
 			"Config": p.Config,
 			"Data":   p.CustomData,
+			"State":  p.State,
 		})
 	} else {
 		//模板文件不存在，则输出404页面丢失页面
@@ -80,6 +89,7 @@ func (p *TFrontPage) RenderToFile(AFilename string) {
 		mC, _ = g.View().Parse(gctx.New(), m404TemplateFilename, g.Map{
 			"Config": p.Config,
 			"Data":   p.CustomData,
+			"State":  p.State,
 		})
 	}
 	//保存文件

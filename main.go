@@ -23,6 +23,7 @@ func main() {
 	GroupTest.ALL("/page", test.TestingPage)
 	GroupTest.ALL("/categories", test.TestCategories)
 	GroupTest.ALL("/state", test.TestPageState)
+	GroupTest.ALL("/config", test.TestConfigV2)
 
 	//s.SetPort(9001)
 	//test.GetImgUrl()

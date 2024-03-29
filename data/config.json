@@ -1,0 +1,17 @@
+{
+	"ICPSerial": "京ICP备111111",
+	"baseDomain": "ggyun.top",
+	"basePort": "80",
+	"cacheEnable": false,
+	"copyright": "Copyright by ggyun.top 2024",
+	"defaultTheme": "default",
+	"logo": "/static/logo.svg",
+	"navShowAbout": false,
+	"navShowArchive": false,
+	"runAsStatic": false,
+	"siteDescription": "我的技术笔记",
+	"siteKeywords": "golang,rust,react",
+	"siteTitle": "技术笔记",
+	"themePath": "./template/default",
+	"useRedis": false
+}
