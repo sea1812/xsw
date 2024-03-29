@@ -10,7 +10,7 @@ func main() {
 	s := g.Server()
 	s.SetDumpRouterMap(false)
 	//检查系统环境配置
-	test.TestClass()
+	//test.TestClass()
 	//读取全局变量
 
 	//初始化路由

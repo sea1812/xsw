@@ -1,7 +1,10 @@
 package app
 
 import (
+	"encoding/json"
+	"fmt"
 	"github.com/gogf/gf/encoding/gjson"
+	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/os/gcache"
 	"github.com/gogf/gf/os/gfile"
 )
@@ -43,10 +46,16 @@ func (p *TConfigV2) LoadFromFile(AFilename string) {
 	mIs, _ := gcache.Contains(SysConfigCache.CacheKey)
 	if mIs == true {
 		mJsonStr, _ := gcache.Get(SysConfigCache.CacheKey)
-		mJson := gjson.New(mJsonStr)
-		_ = mJson.UnmarshalValue(p)
+		_ = json.Unmarshal([]byte(fmt.Sprint(mJsonStr)), p)
 	} else {
-		mJson, _ := gjson.Load(AFilename, true)
-		_ = mJson.UnmarshalValue(p)
+		mStr := gfile.GetContents(AFilename)
+		_ = gcache.Set(SysConfigCache.CacheKey, mStr, SysConfigCache.Duration)
+		_ = json.Unmarshal([]byte(mStr), p)
 	}
+}
+
+// ToMap 转换成MAP
+func (p *TConfigV2) ToMap() g.Map {
+	mJ := gjson.New(p)
+	return mJ.Map()
 }

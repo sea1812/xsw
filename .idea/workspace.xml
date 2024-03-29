@@ -5,12 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新ConfigV2,PageV2">
-      <change afterPath="$PROJECT_DIR$/test/TestPageV2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/ConfigV2.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/ConfigV2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/PagesV2.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/PagesV2.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/template/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/template/test/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test/TestPageV2.go" beforeDir="false" afterPath="$PROJECT_DIR$/test/TestPageV2.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

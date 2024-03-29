@@ -1,6 +1,7 @@
 package test
 
 import (
+	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"time"
 	"xsw/app"
@@ -13,11 +14,13 @@ func TestPageV2(r *ghttp.Request) {
 		BaseTemplate:    "/test/index.html",
 		ContentTemplate: "",
 		AttachTemplate:  "",
-		CacheEnable:     true,
+		CacheEnable:     false,
 		CacheKey:        "testpage",
 		CacheDuration:   time.Minute * 60,
-		CustomData:      nil,
-		Request:         r,
+		CustomData: g.Map{
+			"Demo": "This is demo",
+		},
+		Request: r,
 	}
 	mPage.Init()
 	mPage.Display()

@@ -36,13 +36,15 @@ func (p *TFrontPageV2) Init() {
 	p.startTime = time.Now()
 	//加载系统设置信息
 	p.Config.LoadFromFile(SysConfigFilename)
-	p.CustomData = make(g.Map)
+	if p.CustomData == nil {
+		p.CustomData = make(g.Map)
+	}
 	p.outData = make(g.Map)
 }
 
 // PrepareOutdata 准备用于输出的OutData
 func (p *TFrontPageV2) PrepareOutdata() {
-	p.outData["System"] = p.Config
+	p.outData["System"] = p.Config.ToMap()
 	p.outData["State"] = p.State
 	p.outData["PageTitle"] = p.PageTitle
 	p.outData["ContentTpl"] = p.ContentTemplate
@@ -71,9 +73,7 @@ func (p *TFrontPageV2) Display() {
 			//缓存存在，从缓存中读取
 			m2, _ := gcache.Get(p.CacheKey)
 			mPage = fmt.Sprint(m2)
-			fmt.Println("缓存存在")
 		} else {
-			fmt.Println("缓存不存在")
 			//缓存不存在，生成页面并存入缓存
 			p.endTime = time.Now()
 			p.outData["SubTime"] = p.endTime.Sub(p.startTime)
