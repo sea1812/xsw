@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="ALL" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新ConfigV2,PageV2">
-      <change afterPath="$PROJECT_DIR$/app/Posts.go" afterDir="false" />
+    <list default="true" id="2fc525a2-a3a1-483b-bafd-d654252813e4" name="Changes" comment="更新Posts">
+      <change afterPath="$PROJECT_DIR$/test/TestPosts.go" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Posts.go" beforeDir="false" afterPath="$PROJECT_DIR$/app/Posts.go" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/data/data.db" beforeDir="false" afterPath="$PROJECT_DIR$/data/data.db" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.go" beforeDir="false" afterPath="$PROJECT_DIR$/main.go" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -127,7 +130,8 @@
     <MESSAGE value="更新Categories" />
     <MESSAGE value="更新PageState" />
     <MESSAGE value="更新ConfigV2,PageV2" />
-    <option name="LAST_COMMIT_MESSAGE" value="更新ConfigV2,PageV2" />
+    <MESSAGE value="更新Posts" />
+    <option name="LAST_COMMIT_MESSAGE" value="更新Posts" />
   </component>
   <component name="VgoProject">
     <environment>

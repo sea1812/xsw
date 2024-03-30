@@ -59,7 +59,7 @@ func (p *TPosts) Clear() {
 
 // AddItemFromRecord AddRecord 将gdb.record加入Items
 func (p *TPosts) AddItemFromRecord(ARecord gdb.Record) {
-	mItem := p.AddItem()
+	var mItem TPostItem
 	mItem.Id = ARecord["id"].Int()
 	mItem.Url = ARecord["url"].String()
 	mItem.Title = ARecord["title"].String()
@@ -77,13 +77,7 @@ func (p *TPosts) AddItemFromRecord(ARecord gdb.Record) {
 	mItem.IsHighlight = ARecord["ishighlight"].Bool()
 	mItem.AllowPull = ARecord["allowpull"].Bool()
 	mItem.AllowComment = ARecord["allowcomment"].Bool()
-}
-
-// AddItem 增加Items项目
-func (p *TPosts) AddItem() *TPostItem {
-	m := TPostItem{}
-	p.Items = append(p.Items, m)
-	return &m
+	p.Items = append(p.Items, mItem)
 }
 
 // LoadPostsFromDB 执行SQL，从数据库中读取帖子
@@ -98,6 +92,7 @@ func (p *TPosts) LoadPostsFromDB() {
 			res = mTmp.(gdb.Result)
 		} else {
 			res, er = g.DB().GetAll(p.SQL)
+			_ = gcache.Set(p.CacheKey, res, p.CacheDuration)
 		}
 	} else {
 		res, er = g.DB().GetAll(p.SQL)
