@@ -2,6 +2,7 @@ package app
 
 import (
 	"fmt"
+	"github.com/gogf/gf/frame/g"
 	"github.com/gogf/gf/net/ghttp"
 	"github.com/gogf/gf/os/gfile"
 	"time"
@@ -28,6 +29,7 @@ func (p *THomepage) Init(r *ghttp.Request) {
 	p.CacheKey = "hompage"
 	p.CacheDuration = time.Minute * 60
 	p.Request = r
+
 	//加载首页帖子
 	/*
 		p.Posts.SQL = "select * from posts order by modifytime desc"
@@ -41,7 +43,9 @@ func (p *THomepage) Init(r *ghttp.Request) {
 // PageHomepage 对接URL路由的函数
 func PageHomepage(r *ghttp.Request) {
 	mHomepage := THomepage{}
+	mHomepage.Config.LoadFromFile("./data/config.json")
 	mHomepage.Init(r)
+	mHomepage.CacheEnable = false
 	//获取当前页码
 	mCurrentPage := r.GetInt("p")
 	//获取全部页数
@@ -54,5 +58,9 @@ func PageHomepage(r *ghttp.Request) {
 	mHomepage.Posts.CacheKey = "homepage_posts_" + fmt.Sprint(mCurrentPage)
 	mHomepage.Posts.CacheDuration = time.Second * 60
 	mHomepage.Posts.LoadPostsFromDB()
+	mHomepage.CustomData = g.Map{
+		"posts": mHomepage.Posts,
+	}
 	mHomepage.Display()
+	fmt.Println(mHomepage.outData)
 }

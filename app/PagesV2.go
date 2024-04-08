@@ -44,6 +44,9 @@ func (p *TFrontPageV2) Init() {
 
 // PrepareOutdata 准备用于输出的OutData
 func (p *TFrontPageV2) PrepareOutdata() {
+	if p.outData == nil {
+		p.Init()
+	}
 	p.outData["System"] = p.Config.ToMap()
 	p.outData["State"] = p.State
 	p.outData["PageTitle"] = p.PageTitle
@@ -59,6 +62,7 @@ func (p *TFrontPageV2) RenderPage() string {
 	p.PrepareOutdata() //准备用于输出的OutData
 	var mR string = ""
 	mR, _ = p.Request.Response.ParseTpl(p.BaseTemplate, p.outData)
+	fmt.Println("------------", p.outData)
 	return mR
 }
 
@@ -75,9 +79,9 @@ func (p *TFrontPageV2) Display() {
 			mPage = fmt.Sprint(m2)
 		} else {
 			//缓存不存在，生成页面并存入缓存
+			mPage = p.RenderPage()
 			p.endTime = time.Now()
 			p.outData["SubTime"] = p.endTime.Sub(p.startTime)
-			mPage = p.RenderPage()
 			_ = gcache.Set(p.CacheKey, mPage, p.CacheDuration)
 		}
 	} else {

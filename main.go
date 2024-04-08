@@ -16,7 +16,7 @@ func main() {
 	//初始化路由
 	s.AddStaticPath("/static", "./static")
 	GroupFront := s.Group("/")
-	GroupFront.ALL("/", app.PageIndex)
+	GroupFront.ALL("/", app.PageHomepage)
 
 	//测试页面
 	GroupTest := s.Group("/test")

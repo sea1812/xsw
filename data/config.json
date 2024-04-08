@@ -4,7 +4,7 @@
 	"basePort": "80",
 	"cacheEnable": false,
 	"copyright": "Copyright by ggyun.top 2024",
-	"defaultTheme": "default",
+	"defaultTheme": "test",
 	"logo": "/static/logo.svg",
 	"navShowAbout": false,
 	"navShowArchive": false,
